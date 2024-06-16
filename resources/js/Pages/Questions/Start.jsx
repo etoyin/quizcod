@@ -1,9 +1,16 @@
 import React from 'react'
 import Quiz from './Quiz'
 import { useState } from 'react'
+// import soundfile from '../assets/alert.mp3'
+import sound from '/public/music/START MUSIC.mp3'
 
 function Start({quizz}) {
     const [start, setStart] = useState(false);
+    const [stop, setStop] = useState(false)
+    let audio = new Audio(sound);
+    if (start) {
+      audio.play();
+    }
   return (
     <div className='bg-dark-blue'>
       {

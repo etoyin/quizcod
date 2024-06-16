@@ -63,6 +63,7 @@ body {
   padding: 11px;
   margin-top: 15px;
   cursor: pointer;
+  height: 40px
 }
 
 .quiz-container ul .selected-answer {

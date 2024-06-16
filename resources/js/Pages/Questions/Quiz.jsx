@@ -8,6 +8,10 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import { useForm, Head, Link } from '@inertiajs/react';
 import { useState } from 'react';
 import Level from './Level';
+import theme from '/public/music/5000 Music.mp3'
+import theme2 from '/public/music/10000 Music.mp3'
+import correct from '/public/music/CORRECT ANSWER.mp3'
+import wrong from '/public/music/WRONG ANSWER.mp3'
 
   
 export default function Quiz ({quizz}) {
@@ -19,7 +23,9 @@ export default function Quiz ({quizz}) {
     const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
     const [fiftyUsed, setFiftyUsed] = useState(true);
     const [phoneUsed, setPhoneUsed] = useState(true);
-  
+    
+    let audio = new Audio();
+    
     // const [ question, setQuestion] = useState(quiz.questions[activeQuestion]);
     const [ questions, setQuestions] = useState(JSON.parse(quizz[0].questions));
     const priceMoney = ['N1000', 'N2000', 'N3000', 'N4000', 'N6000', 'N8000', 'N10000', 'N12000', 'N14000', 'N15000', 'N16000', 'N17000', 'N18000', 'N20000', 'N25000']
@@ -27,6 +33,9 @@ export default function Quiz ({quizz}) {
 
     const mark = () => {
         if (selectedAnswer === questions[activeQuestion].correctAnswer) {
+            // let audio = new Audio(correct);
+            audio.src=correct;
+            audio.play(); 
             let n = document.getElementsByClassName("selected-answer");
             let change = false;
             let blink = setInterval(() => {
@@ -50,6 +59,9 @@ export default function Quiz ({quizz}) {
             // alert(n);
             setShowResult(showResult + 1);
         } else {
+            // let audio = new Audio(wrong);
+            audio.src = wrong;
+            audio.play();
             setMove(false);
             // let i = e.target.getAttribute("data-bind");
             let ind = questions[activeQuestion].choices.indexOf(questions[activeQuestion].correctAnswer);
@@ -114,6 +126,9 @@ export default function Quiz ({quizz}) {
             setSelectedAnswerIndex(null);
             setSelectedAnswer("");
             console.log(questions[activeQuestion].choices);
+            // 
+            audio.src = theme2;
+            audio.play(); 
         }
     }
     const onAnswerSelected = (answer, index) => {
@@ -136,6 +151,9 @@ export default function Quiz ({quizz}) {
       let el = document.getElementById("slide-right");
       el.classList.remove('-right-96');
       el.classList.add('right-0');
+      // let audio = new Audio(theme);
+      audio.src = theme
+      audio.play();
     }
 
     const closeLifeLine = () => {
