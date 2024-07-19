@@ -4,17 +4,13 @@ import InputError from '@/Components/InputError';
 import Chirp from '@/Components/Chirp';
 import PrimaryButton from '@/Components/PrimaryButton';
 import { useForm, Head, Link } from '@inertiajs/react';
-import sound from '/public/music/MAIN THEME.mp3'
+// import sound from 
 
  
 export default function Index({ auth, chirps }) {
     const [start, setStart] = useState(false)
 
-    let audio = new Audio(sound);
-    if(start){
-        audio.play();
-        console.log("Yess");
-    }
+    
 
     const handleMouse = () => {
         setStart(true);
@@ -22,8 +18,8 @@ export default function Index({ auth, chirps }) {
 
     return (
         <div>
-            <div className="bg-dark-blue w-full h-screen text-white">
-                <h2 className="text-3xl uppercase text-center p-5">Fathers' Day Genius Show</h2>
+            <div className="bg-dark-blue fixed left-0 top-0 h-full w-full h-screen text-white">
+                <h2 className="text-3xl uppercase text-center p-5">Tabiths's Conference Genius Show</h2>
                     <div className="flex items-center mt-10 m-auto h-96 justify-center p-5">
                         <Link href="/question/cat1">
                             <div
