@@ -212,7 +212,7 @@ export default function Quiz ({quizz, audio}) {
           <div className='flex flex-row-reverse'><i onClick={closeLevel} className="text-lg las la-times"></i></div>
           <div className='flex flex-col-reverse '>
             {
-              [1,2,3,4,5,6,7,8,9,9,9,9,9,9,9].map((n, i) => {
+              questions.map((n, i) => {
                 return (
                   <div key={i} className={ 
                     "flex m-3 border  border-white px-4 p-2 rounded-full justify-between "
