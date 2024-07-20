@@ -32,8 +32,8 @@ body {
 }
 
 .quiz-container {
-  max-width: 800px;
-  min-width: 550px;
+  max-width: 1000px;
+  min-width: 800px;
   background: #02052b;
   border-radius: 4px;
   margin-top: 100px;

@@ -41,7 +41,7 @@ export default function Quiz ({quizz, audio}) {
     
     // const [ question, setQuestion] = useState(quiz.questions[activeQuestion]);
     const [ questions, setQuestions] = useState(JSON.parse(quizz[0].questions));
-    const priceMoney = ['N1000', 'N2000', 'N3000', 'N4000', 'N6000', 'N8000', 'N10000', 'N12000', 'N14000', 'N15000', 'N16000', 'N17000', 'N18000', 'N20000', 'N25000']
+    const priceMoney = ['N500', 'N1000', 'N2000', 'N3000', 'N5000', 'N7000', 'N9000', 'N10000', 'N12000', 'N15000', 'N16000', 'N17000', 'N18000', 'N19000', 'N20000']
     console.log(JSON.parse(quizz[0].questions));
 
     const mark = () => {
